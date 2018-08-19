@@ -34,10 +34,24 @@ $quotes = [
 
 ] ;
 
-$quote= $quotes[rand(0, count($quotes)-1)];
 
-echo $quote["quote"]. " <br> <b>" . 
-$quote["author"] . "<br>" ;
+$quote= $quotes[array_rand($quotes)];
 
 
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Random quote</title>
+</head>
+<body>
+    <blockquote>
+        <h2> "<?= $quote["quote"]; ?>  "</h2>
+        <strong>- <?= $quote["author"]; ?>  </strong>
+    </blockquote>
+</body>
+</html> 
